@@ -45,6 +45,7 @@ i = 0;
 @oscmsg
 printf("got osc: %s\n", oscstr);
 ```
+[Download File](https://github.com/arneboe/con-trol-oscii-bot/blob/master/test.txt)
 
 If everything works you should now see the first fader moving up and down and should also see some debug messages in the oscii-bot window.
 
@@ -113,5 +114,5 @@ msg1 == 0x80? (
 	oscsend(osc_out, "i/Mx/button/%d", 0, osc_button_number);
 );
 ```
-
+[Download File](https://github.com/arneboe/con-trol-oscii-bot/blob/master/simple_faders.txt)
 
