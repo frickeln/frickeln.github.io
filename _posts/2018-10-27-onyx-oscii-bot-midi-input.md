@@ -27,7 +27,7 @@ Get it [here](https://www.cockos.com/oscii-bot).
 Use the following oscii-bot script to test if your Onyx setup is correct.
 Don't forget to adapt the ip if you are not using 192.168.44.44.
 
-{% highlight c %}
+```
 @input osc_in OSC "192.168.44.44:9000"
 @output osc_out OSC "192.168.44.44:8000"
 
@@ -44,7 +44,7 @@ i = 0;
 
 @oscmsg
 printf("got osc: %s\n", oscstr);
-{% endhighlight %}
+```
 
 If everything works you should now see the first fader moving up and down and should also see some debug messages in the oscii-bot window.
 
