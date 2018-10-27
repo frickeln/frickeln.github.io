@@ -24,8 +24,9 @@ Make sure that you enabled the loopback adapter and set the port to 8000. Enable
 Setup OSCII-Bot
 --------------------
 Get it [here](https://www.cockos.com/oscii-bot).
-Use the following script to test if your Onyx setup is correct.
-Don't forget to adapt the ip if you are not using 192.168.44.44
+Use the following oscii-bot script to test if your Onyx setup is correct.
+Don't forget to adapt the ip if you are not using 192.168.44.44.
+
 ```
 @input osc_in OSC "192.168.44.44:9000"
 @output osc_out OSC "192.168.44.44:8000"
@@ -44,4 +45,73 @@ i = 0;
 @oscmsg
 printf("got osc: %s\n", oscstr);
 ```
+
 If everything works you should now see the first fader moving up and down and should also see some debug messages in the oscii-bot window.
+
+Example Script
+--------------------------
+The following example script uses 8 midi faders to control the first 8 faders in Onyx and 8 midi buttons to control the corresponding flash buttons.
+
+```
+@input osc_in OSC "192.168.44.44:9000"
+@output osc_out OSC "192.168.44.44:8000"
+@input midi_in MIDI "con.trol red 2"
+
+@init
+midi_channel_to_fader_num = 1024;
+midi_channel_to_button_num = 2048;
+
+//the following array defines the mapping between midi fader channel (CC) and mpc fader number.
+//NOTE: The fader numbers are zero-based. I.e. the first fader has number 0.
+//E.g. if you have a fader that sends on midi channel 7 and want to control fader 3 in mpc
+// you would set  midi_channel_to_fader_num[7] = 0;
+midi_channel_to_fader_num[7] = 0;
+midi_channel_to_fader_num[6] = 1;
+midi_channel_to_fader_num[5] = 2;
+midi_channel_to_fader_num[4] = 3;
+midi_channel_to_fader_num[3] = 4;
+midi_channel_to_fader_num[2] = 5;
+midi_channel_to_fader_num[11] = 6;
+midi_channel_to_fader_num[10] = 7;
+//midi_channel_to_fader_num[10] = 8;
+//midi_channel_to_fader_num[10] = 9;
+
+
+//the following array defines the mappin between buttons (note on/off) and mpc flash buttons.
+//NOTE: The button mpc button numbers are zero-based.
+midi_channel_to_button_num[7] = 0;
+midi_channel_to_button_num[6] = 1;
+midi_channel_to_button_num[5] = 2;
+midi_channel_to_button_num[4] = 3;
+midi_channel_to_button_num[3] = 4;
+midi_channel_to_button_num[2] = 5;
+midi_channel_to_button_num[11] = 6;
+midi_channel_to_button_num[10] = 7;
+//midi_channel_to_button_num[7] = 8;
+//midi_channel_to_button_num[7] = 9;
+
+@oscmsg
+//printf("got osc: %s\n", oscstr);
+
+
+@midimsg 
+//Faders (CC)
+msg1 == 0xB0? (
+	osc_fader_number = midi_channel_to_fader_num[msg2] * 10 + 4203;
+	oscsend(osc_out, "i/Mx/fader/%d", msg3, osc_fader_number);
+);
+
+//flash buttons (note on)
+msg1 == 0x90? (
+	osc_button_number = midi_channel_to_button_num[msg2] * 10 + 4205;
+	oscsend(osc_out, "i/Mx/button/%d", 1, osc_button_number);
+);
+
+//flash buttons (note off)
+msg1 == 0x80? (
+	osc_button_number = midi_channel_to_button_num[msg2] * 10 + 4205;
+	oscsend(osc_out, "i/Mx/button/%d", 0, osc_button_number);
+);
+```
+
+
