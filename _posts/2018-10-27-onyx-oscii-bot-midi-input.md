@@ -3,7 +3,7 @@ layout: post
 title: Use Midi Device to Control Faders in Elation Onyx through OSC using oscii-bot
 ---
 
-I am using [oscii-bot](https://www.cockos.com/oscii-bot) to forward midi commands to Elation Onyx. This way faders, playbacks, etc. can be controll from any midi controller.
+Use [oscii-bot](https://www.cockos.com/oscii-bot) to forward midi commands to Elation Onyx. This way faders, playbacks, etc. can be controlled from any midi controller.
 
 
 Install the Microsoft Loopback Adapter
