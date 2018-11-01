@@ -86,3 +86,6 @@ msg1 == 0xB4? (
 
 ### Contribution
 Feel free to change the script in any way you want. If you want to contribute bugfixes or improvements please do so using pull requests on the bcf2000 branch [here](https://github.com/arneboe/con-trol-oscii-bot/tree/bcf2000)
+
+### Issues
+Use the issue tracker over [here](https://github.com/arneboe/con-trol-oscii-bot/issues) for any issues, requests and bug reports. Please understand that I am writing this script in my free time. I will try to fix any bugs but it might take some time. 
