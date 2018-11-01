@@ -12,7 +12,7 @@ Additionally you can switch playback banks and control the rate belts.
 ![bcf_config](https://raw.githubusercontent.com/arneboe/con-trol-oscii-bot/bcf2000/bcf_onyx.png)
 
 ### Setup
-1. First follow setup osc in Onyx (see [here](https://frickeln.github.io/onyx-oscii-bot-midi-input/)).
+1. First setup osc in Onyx (see [here](https://frickeln.github.io/onyx-oscii-bot-midi-input/)).
 2. Download my bcf2000 script from [here](https://github.com/arneboe/con-trol-oscii-bot/blob/bcf2000/BCF2000_to_onyx.txt).
 3. Install the script. Don't forget to change the ip inside the script to your loopback adapter's ip.
 4. The script contains hardcoded midi channels for all faders. You have to configure your BCF2000 to send those values. The following Image shows how the BCF should be configured:
