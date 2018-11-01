@@ -21,13 +21,15 @@ Additionally you can switch playback banks and control the rate belts.
 ### How does it work?
 The script connects to the BCF using midi and to Onyx using osc.
 It listens to messages from the BCF, translates them into osc and forwards them to Onyx.
-Additionally it listens to osc messages coming from Onyx and translates them into midi messages to control the motor faders of the BCF.
+Additionally it listens to osc messages coming from Onyx and translates them into midi messages to control the motor faders of the BCF. I grabbed the osc messages from the official touchOSC file provided by Elation, thus as long as they support touchOSC this script should work.
+
 ```
 @input osc_in OSC "192.168.44.44:9000"
 @output osc_out OSC "192.168.44.44:8000" 1024 0
 @input midi_in MIDI "BCF2000"
 @output midi_out MIDI "BCF2000"
 ```
+
 
 All midi values are hardcoded at the beginning of the script in the configuration section.
 ```
@@ -83,6 +85,7 @@ msg1 == 0xB4? (
 // beld handling code here
 );
 ```
+
 
 ### Contribution
 Feel free to change the script in any way you want. If you want to contribute bugfixes or improvements please do so using pull requests on the bcf2000 branch [here](https://github.com/arneboe/con-trol-oscii-bot/tree/bcf2000)
