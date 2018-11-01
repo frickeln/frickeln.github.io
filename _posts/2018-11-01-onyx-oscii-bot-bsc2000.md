@@ -4,8 +4,6 @@ title: Control Onyx with BCF2000 using oscii-bot
 ---
 ![fader animation](https://raw.githubusercontent.com/frickeln/frickeln.github.io/master/_posts/fader_bcf.gif)
 
-I made an oscii-bot script that lets you control the main playback faders in Onyx using a BCF2000.
-
 ### What can be controlled?
 With this script you can control the first 8 main playback faders, their flash buttons and select buttons.
 Additionally you can switch playback banks and control the rate belts.
