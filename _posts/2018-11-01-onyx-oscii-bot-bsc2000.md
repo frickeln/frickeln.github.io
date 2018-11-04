@@ -7,14 +7,14 @@ title: Control Onyx with BCF2000 using oscii-bot
 ### What can be controlled?
 With this script you can control the first 8 main playback faders, their flash buttons and select buttons.
 Additionally you can switch playback banks and control the rate belts.
-![bcf_config](https://raw.githubusercontent.com/arneboe/con-trol-oscii-bot/bcf2000/bcf_onyx.png)
+![bcf_config](https://raw.githubusercontent.com/arneboe/con-trol-oscii-bot/master/bcf2000/bcf_onyx.png)
 
 ### Setup
 1. First setup osc in Onyx (see [here](https://frickeln.github.io/onyx-oscii-bot-midi-input/)).
-2. Download my bcf2000 script from [here](https://github.com/arneboe/con-trol-oscii-bot/blob/bcf2000/BCF2000_to_onyx.txt).
+2. Download my bcf2000 script from [here](https://github.com/arneboe/con-trol-oscii-bot/blob/master/bcf2000/BCF2000_to_onyx.txt).
 3. Install the script. Don't forget to change the ip inside the script to your loopback adapter's ip.
 4. The script contains hardcoded midi channels for all faders. You have to configure your BCF2000 to send those values. The following Image shows how the BCF should be configured:
-![bcf_config](https://raw.githubusercontent.com/arneboe/con-trol-oscii-bot/bcf2000/bcf_midi_settings.png)
+![bcf_config](https://raw.githubusercontent.com/arneboe/con-trol-oscii-bot/master/bcf2000/bcf_midi_settings.png)
 5. Start oscii-bot
 6. Now it should work.
 
@@ -88,7 +88,7 @@ msg1 == 0xB4? (
 
 
 ### Contribution
-Feel free to change the script in any way you want. If you want to contribute bugfixes or improvements please do so using pull requests on the bcf2000 branch [here](https://github.com/arneboe/con-trol-oscii-bot/tree/bcf2000)
+Feel free to change the script in any way you want. If you want to contribute bugfixes or improvements please do so using pull requests on the bcf2000 branch [here](https://github.com/arneboe/con-trol-oscii-bot)
 
 ### Issues
 Use the issue tracker over [here](https://github.com/arneboe/con-trol-oscii-bot/issues) for any issues, requests and bug reports. Please understand that I am writing this script in my free time. I will try to fix any bugs but it might take some time. 
